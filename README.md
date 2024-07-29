@@ -17,3 +17,5 @@ to run the project on your local machine
 download the code
 install node packages (npm i)
 after that open terminal and run the commant "npm run dev" but make sure you must be inside the project root folder
+
+"design_look.png" file give you and idea about the design if the project is run successfully
