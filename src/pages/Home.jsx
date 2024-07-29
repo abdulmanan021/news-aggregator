@@ -16,7 +16,7 @@ const Home = () => {
 
     const fetchAllNews = async () => {
         try {
-            let response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=c0c486c2272242c388f5ca286a2dc15f");
+            let response = await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=c0c486c2272242c388f5ca286a2dc15f");
             let data = await response.json();
             setAllNews(data.articles);
         } catch (error) {
