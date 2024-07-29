@@ -11,3 +11,9 @@ Currently, two official plugins are available:
 icon library: https://react-icons.github.io/react-icons/
 
 for deploy vite app https://www.youtube.com/watch?v=oPuaMcLRYdY
+
+to run the project on your local machine
+
+download the code
+install node packages (npm i)
+after that open terminal and run the commant "npm run dev" but make sure you must be inside the project root folder
