@@ -95,3 +95,11 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.text-primary:hover {
+  transition: all ease-in-out 300ms;
+}
+
+.text-primary:hover {
+  letter-spacing: 0.5px;
+}
