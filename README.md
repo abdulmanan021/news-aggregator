@@ -10,4 +10,4 @@ Currently, two official plugins are available:
 
 icon library: https://react-icons.github.io/react-icons/
 
-for deploy vite app https://www.youtube.com/watch?v=XhoWXhyuW_I
+for deploy vite app https://www.youtube.com/watch?v=oPuaMcLRYdY
