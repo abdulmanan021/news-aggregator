@@ -17,7 +17,7 @@ const Home = () => {
     const fetchAllNews = async () => {
         try {
             // Fetch data from the News API
-            let response = await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=c0c486c2272242c388f5ca286a2dc15f");
+            let response = await fetch("https://newsapi.org/v2/top-headlines?q=bitcoin&apiKey=c0c486c2272242c388f5ca286a2dc15f");
 
             // Check if the response status is OK
             if (!response.ok) {
