@@ -201,7 +201,7 @@ const Home = () => {
                 </Col> */}
                 
                     {filteredSecondaryNews.map((news, index) => (
-                        <Col sm={12} md={5} lg={4} key={news.id}>
+                        <Col sm={12} md={6} lg={4} key={news.id}>
                         <SecondaryNewsCard
                             headline={news.webTitle}
                             type={news.type}
