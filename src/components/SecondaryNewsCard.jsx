@@ -22,7 +22,7 @@ const SecondaryNewsCard = ({ headline, type, pubTime, detail }) => {
                 <div className='d-flex flex-column justify-content-between h-100'>
                     <div>
                         <Nav.Link href={detail} target='_blank'>
-                            <Card.Title className='text_limit_3 fs-6 mt-2'>{headline}</Card.Title>
+                            <Card.Title className='text_limit_2 fs-6 mt-2'>{headline}</Card.Title>
                         </Nav.Link>
                     </div>
                     <div>

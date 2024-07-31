@@ -151,14 +151,14 @@ const Home = () => {
                         <Col sm={12} md={4} lg={3} className='mb-3'>
                             <Form.Control type="date" placeholder="Search" className="custom_input" value={selectedDate} onChange={handleDateChange} />
                         </Col>
-                        <Col sm={12} md={4} lg={3} className='mb-3'>
+                        {/* <Col sm={12} md={4} lg={3} className='mb-3'>
                             <Form.Select className="custom_input" onChange={handleResourceChange}>
                                 <option hidden>Search by Resource</option>
                                 {Array.from(new Set(allNews.map(news => news.source.name))).map((source, index) => (
                                     <option key={index} value={source}>{source}</option>
                                 ))}
                             </Form.Select>
-                        </Col>
+                        </Col> */}
                         <Col sm={12} md={6} lg={3} className='mb-3'>
                             <Form.Select className="custom_input" onChange={handleTypeChange} value={selectedType}>
                                 <option hidden>Search Category</option>
@@ -167,14 +167,14 @@ const Home = () => {
                                 ))}
                             </Form.Select>
                         </Col>
-                        <Col sm={12} md={4} lg={3} className='mb-3'>
+                        {/* <Col sm={12} md={4} lg={3} className='mb-3'>
                             <Form.Select className="custom_input" onChange={handleAuthorChange}>
                                 <option hidden>Search by Authors</option>
                                 {Array.from(new Set(allNews.map(news => news.author))).map((author, index) => (
                                     <option key={index} value={author}>{author}</option>
                                 ))}
                             </Form.Select>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Col>
                 <Col md={3} lg={2} xl={1} className='mb-3'>
@@ -182,7 +182,7 @@ const Home = () => {
                 </Col>
             </Row>
             <Row>
-
+                {/* 
                 <Col sm={12} md={7} lg={8}>
                     <Row>
                         {filteredAllNews.map((news) => (
@@ -198,17 +198,19 @@ const Home = () => {
                             </Col>
                         ))}
                     </Row>
-                </Col>
-                <Col sm={12} md={5} lg={4}>
+                </Col> */}
+                
                     {filteredSecondaryNews.map((news, index) => (
+                        <Col sm={12} md={5} lg={4} key={news.id}>
                         <SecondaryNewsCard
                             headline={news.webTitle}
                             type={news.type}
                             pubTime={news.webPublicationDate}
                             detail={news.webUrl}
                         />
+                        </Col>
                     ))}
-                </Col>
+                
             </Row>
         </Main>
     )
