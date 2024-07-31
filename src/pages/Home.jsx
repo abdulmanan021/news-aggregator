@@ -6,10 +6,17 @@ import SecondaryNewsCard from '../components/SecondaryNewsCard'
 
 const Home = () => {
 
+    const formatDate = (date) => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    };
+
     const [allNews, setAllNews] = useState([])
     const [secondaryNews, setSecondaryNews] = useState([])
     const [searchNews, setSearchNews] = useState('');
-    const [selectedDate, setSelectedDate] = useState('');
+    const [selectedDate, setSelectedDate] = useState(formatDate(new Date()));
     const [selectedResource, setSelectedResource] = useState('');
     const [selectedType, setSelectedType] = useState('');
     const [selectedAuthor, setSelectedAuthor] = useState('');
@@ -136,7 +143,7 @@ const Home = () => {
                 <Col md={9} lg={10} xl={11}>
                     <Row>
                         <Col sm={12} md={4} lg={3} className='mb-3'>
-                            <Form.Control type="date" placeholder="Search" className="custom_input" value={selectedDate} onChange={handleDateChange} />
+                            <Form.Control type="date" placeholder="Select Date" className="custom_input" value={selectedDate} onChange={handleDateChange} />
                         </Col>
                         {/* <Col sm={12} md={4} lg={3} className='mb-3'>
                             <Form.Select className="custom_input" onChange={handleResourceChange}>
