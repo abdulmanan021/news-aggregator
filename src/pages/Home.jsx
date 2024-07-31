@@ -16,33 +16,20 @@ const Home = () => {
 
     const fetchAllNews = async () => {
         try {
-            // Fetch data from the News API
-            let response = await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=c0c486c2272242c388f5ca286a2dc15f");
+            const response = await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=c0c486c2272242c388f5ca286a2dc15f");
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
-            // Check if the response status is OK
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            // Parse the response JSON
-            let data = await response.json();
-
-            // Log the response for inspection
-            console.log('News API response:', data);
-
-            // Check if the expected data structure exists
-            if (data.articles) {
-                // Set the news data if the structure is correct
-                setAllNews(data.articles);
+            const { articles } = await response.json();
+            if (articles) {
+                setAllNews(articles);
             } else {
-                // Handle unexpected response structure
-                console.error('Unexpected response structure:', data);
+                console.error('Unexpected response structure:', articles);
             }
         } catch (error) {
-            // Log any errors encountered during the fetch
             console.error('Error fetching data from News API:', error);
         }
-    }
+    };
+
 
 
     const fetchSecondaryNews = async () => {
@@ -65,7 +52,7 @@ const Home = () => {
 
 
     // console.log(allNews)
-    console.log(secondaryNews)
+    // console.log(secondaryNews)
 
     useEffect(() => {
         fetchAllNews()
@@ -199,18 +186,18 @@ const Home = () => {
                         ))}
                     </Row>
                 </Col> */}
-                
-                    {filteredSecondaryNews.map((news, index) => (
-                        <Col sm={12} md={6} lg={4} key={news.id}>
+
+                {filteredSecondaryNews.map((news, index) => (
+                    <Col sm={12} md={6} lg={4} key={news.id}>
                         <SecondaryNewsCard
                             headline={news.webTitle}
                             type={news.type}
                             pubTime={news.webPublicationDate}
                             detail={news.webUrl}
                         />
-                        </Col>
-                    ))}
-                
+                    </Col>
+                ))}
+
             </Row>
         </Main>
     )
